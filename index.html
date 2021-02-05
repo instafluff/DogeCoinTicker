@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DogeCoin Ticker!</title>
+		<style>
+		.cssmarquee {
+			height: 50px;
+			overflow: hidden;
+			position: relative;
+		}
+		.cssmarquee h1 {
+			font-family: "Comic Sans MS", "Comic Sans", cursive;
+			font-size: 2em;
+			/* color: turquoise; */
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			line-height: 50px;
+			text-align: center;
+			transform:translateX(100%);
+			animation: cssmarquee 10s linear infinite;
+		}
+		.green {
+			color: #90be6d;
+		}
+		.red {
+			color: #f94144;
+		}
+		@keyframes cssmarquee {
+			0% {
+				transform: translateX(100%);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
+		</style>
+	<head>
+	<body>
+	<div class="cssmarquee">
+		<h1 id="doge-price" class="green"></h1>
+	</div>
+	<script>
+		(async () => {
+			let previousPrice = -1;
+			updatePrice();
+			setInterval( updatePrice, 60000 );
+
+			async function updatePrice() {
+				let doge = await fetch( "https://sochain.com/api/v2/get_price/DOGE/USD" ).then( r => r.json() );
+				let price = parseFloat( doge.data.prices[ 0 ].price );
+				if( price !== previousPrice ) {
+					if( price >= previousPrice ) {
+						// MAKE IT GREEN
+						document.getElementById( "doge-price" ).innerText = `DOGE:▲$${price}▲`;
+						document.getElementById( "doge-price" ).classList.remove( "red" );
+						document.getElementById( "doge-price" ).classList.add( "green" );
+					}
+					else {
+						// MAKE IT PINK
+						document.getElementById( "doge-price" ).innerText = `DOGE:▼$${price}▼`;
+						document.getElementById( "doge-price" ).classList.remove( "green" );
+						document.getElementById( "doge-price" ).classList.add( "red" );
+					}
+					previousPrice = price;
+				}
+			}
+		})();
+	</script>
+	</body>
+</html>

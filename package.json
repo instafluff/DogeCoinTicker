@@ -1,0 +1,36 @@
+{
+  "name": "dogecointicker",
+  "version": "1.0.0",
+  "description": "The Comfiest DOGE coin price ticker Stream Overlay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/DogeCoinTicker.git"
+  },
+  "keywords": [
+    "Doge",
+    "Dogecoin",
+    "coin",
+    "crypto",
+    "cryptocurrency",
+    "meme",
+    "ticker",
+    "price",
+    "stream",
+    "overlay",
+    "twitch",
+    "instafluff"
+  ],
+  "author": "Instafluff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/DogeCoinTicker/issues"
+  },
+  "homepage": "https://github.com/instafluff/DogeCoinTicker#readme",
+  "dependencies": {
+    "webwebweb": "^1.4.6"
+  }
+}
