@@ -12,6 +12,10 @@ We built this Stream Overlay of an animated DogeCoin price ticker live on Twitch
 
 > https://twitch.tv/instafluff
 
+> *Such coin. Much love.*
+
+> DPsvmxqaJV15nqVnT9BiwYskVmQLozRKht
+
 ## Instructions ##
 
 Add this as a Browser Source!
